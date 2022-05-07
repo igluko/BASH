@@ -10,6 +10,6 @@ then
 else
     eval "$SSH 'echo \"$TASK\" >> $CRON_FILE'"
     echo "add task to crontab"
-    eval "$SSH 'service cron reload'"
+    eval "$SSH 'crontab $CRON_FILE'"
     echo "reload cron service"
 fi
