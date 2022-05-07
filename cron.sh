@@ -8,7 +8,7 @@ if eval "$SSH 'cat $CRON_FILE | grep -q \"$TASK\"'"
 then
     echo "task already has been added to crontab"
 else
-    eval "$SSH 'echo \"$TASK\" > $CRON_FILE'"
+    eval "$SSH 'echo \"$TASK\" >> $CRON_FILE'"
     echo "add task to crontab"
     eval "$SSH 'service cron reload'"
     echo "reload cron service"
